@@ -1,7 +1,7 @@
 def find_element_index(array, value_to_find)
-  array.length.times do |index|
-    if array[index] == value_to_find
-      return index
+  array.length.times do |count|
+    if array[count] == value_to_find
+      return count
     end 
   end 
   nil
@@ -18,7 +18,15 @@ def find_max_value(array)
 end
 
 def find_min_value(array)
-  sortedArray = array.sort
-  
-  sortedArray.shift
+  min = 0
+    array.length.times do |count|
+      if count == 0
+        min = array[count]
+      else
+        if array[count] < min
+          min = array[count]
+        end
+      end
+    end
+  min
 end
